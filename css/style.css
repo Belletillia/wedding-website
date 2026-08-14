@@ -1,17 +1,19 @@
 /* ============================================
    Wedding Website — Shared Styles
-   Palette: ivory / charcoal / dusty rose / gold
+   Palette: ivory / deep olive / sage / dusty lavender / rose gold
    ============================================ */
 
 :root {
-  --color-bg: #faf7f2;
-  --color-bg-alt: #f2ece3;
-  --color-text: #3a3532;
-  --color-text-soft: #6b625b;
-  --color-accent: #b8918a;      /* dusty rose */
-  --color-accent-dark: #9c6f68;
-  --color-gold: #b08d57;
-  --color-border: #e3d9cc;
+  --color-bg: #f7f3ec;          /* ivory */
+  --color-bg-alt: #ecefe6;      /* pale sage */
+  --color-bg-lavender: #edeaf1; /* pale lavender */
+  --color-text: #3b4034;        /* deep olive */
+  --color-text-soft: #6d7266;
+  --color-sage: #7a8a6a;
+  --color-lavender: #998ca6;
+  --color-rose-gold: #b76e79;
+  --color-rose-gold-light: #e3c4be;
+  --color-border: #ded7c8;
   --color-white: #ffffff;
 
   --font-script: 'Parisienne', cursive;
@@ -55,7 +57,7 @@ p {
 }
 
 a {
-  color: var(--color-accent-dark);
+  color: var(--color-lavender);
   text-decoration: none;
 }
 
@@ -79,7 +81,7 @@ img {
   text-transform: uppercase;
   letter-spacing: 0.25em;
   font-size: 0.75rem;
-  color: var(--color-gold);
+  color: var(--color-sage);
   margin-bottom: 0.75em;
   display: block;
 }
@@ -87,7 +89,7 @@ img {
 .divider {
   width: 60px;
   height: 2px;
-  background: var(--color-gold);
+  background: var(--color-rose-gold);
   margin: 1.5em auto;
   border: none;
 }
@@ -98,7 +100,7 @@ img {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(250, 247, 242, 0.95);
+  background: rgba(247, 243, 236, 0.95);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--color-border);
 }
@@ -114,7 +116,7 @@ img {
 .site-title {
   font-family: var(--font-script);
   font-size: 1.8rem;
-  color: var(--color-accent-dark);
+  color: var(--color-lavender);
 }
 
 .nav-toggle {
@@ -144,9 +146,52 @@ img {
 
 .main-nav a.active,
 .main-nav a:hover {
-  color: var(--color-accent-dark);
+  color: var(--color-sage);
   text-decoration: none;
-  border-bottom: 1px solid var(--color-accent-dark);
+  border-bottom: 1px solid var(--color-sage);
+}
+
+.main-nav .has-submenu {
+  position: relative;
+}
+
+.main-nav .submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 160px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 50;
+}
+
+.main-nav .has-submenu:hover .submenu,
+.main-nav .has-submenu:focus-within .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.main-nav .submenu a {
+  display: block;
+  padding: 10px 16px;
+  white-space: nowrap;
+  border-bottom: none;
+}
+
+.main-nav .submenu a:hover,
+.main-nav .submenu a.active {
+  background: var(--color-bg-alt);
+  border-bottom: none;
 }
 
 @media (max-width: 720px) {
@@ -181,6 +226,22 @@ img {
     display: block;
     padding: 12px 0;
   }
+
+  .main-nav .submenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    padding-left: 20px;
+  }
+
+  .main-nav .submenu a {
+    padding: 10px 0;
+    font-size: 0.85rem;
+  }
 }
 
 /* ---------- Hero ---------- */
@@ -194,14 +255,14 @@ img {
 .hero .site-title-large {
   font-family: var(--font-script);
   font-size: 4.2rem;
-  color: var(--color-accent-dark);
+  color: var(--color-lavender);
   line-height: 1.2;
   margin-bottom: 0.2em;
 }
 
 .hero .ampersand {
   font-size: 2.2rem;
-  color: var(--color-gold);
+  color: var(--color-rose-gold);
   display: block;
   margin: 0.1em 0;
 }
@@ -237,7 +298,7 @@ img {
 .countdown .number {
   font-family: var(--font-heading);
   font-size: 2.4rem;
-  color: var(--color-accent-dark);
+  color: var(--color-sage);
   display: block;
 }
 
@@ -271,15 +332,21 @@ img {
 }
 
 .card {
-  background: var(--color-white);
+  background: var(--color-bg-lavender);
   border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-rose-gold);
   border-radius: 6px;
   padding: 32px 28px;
   text-align: center;
+  transition: background 0.2s ease;
+}
+
+.card:hover {
+  background: var(--color-rose-gold-light);
 }
 
 .card h3 {
-  color: var(--color-accent-dark);
+  color: var(--color-lavender);
 }
 
 .card-grid.compact {
@@ -307,8 +374,8 @@ img {
   letter-spacing: 0.1em;
   font-size: 0.9rem;
   padding: 14px 36px;
-  border: 1px solid var(--color-accent-dark);
-  color: var(--color-accent-dark);
+  border: 1px solid var(--color-sage);
+  color: var(--color-sage);
   background: transparent;
   border-radius: 2px;
   cursor: pointer;
@@ -316,19 +383,20 @@ img {
 }
 
 .btn:hover {
-  background: var(--color-accent-dark);
+  background: var(--color-sage);
   color: var(--color-white);
   text-decoration: none;
 }
 
 .btn-primary {
-  background: var(--color-accent-dark);
+  background: var(--color-rose-gold);
   color: var(--color-white);
+  border-color: var(--color-rose-gold);
 }
 
 .btn-primary:hover {
-  background: var(--color-accent);
-  color: var(--color-white);
+  background: var(--color-rose-gold-light);
+  color: var(--color-text);
 }
 
 /* ---------- Timeline (Details page) ---------- */
@@ -351,7 +419,7 @@ img {
 
 .timeline-time {
   font-family: var(--font-heading);
-  color: var(--color-gold);
+  color: var(--color-rose-gold);
   min-width: 100px;
   font-size: 1rem;
 }
@@ -363,6 +431,7 @@ img {
   margin: 0 auto;
   background: var(--color-white);
   border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-sage);
   border-radius: 6px;
   padding: 40px;
 }
@@ -435,6 +504,7 @@ img {
 
 .radio-group input {
   width: auto;
+  accent-color: var(--color-rose-gold);
 }
 
 .form-note {
@@ -463,6 +533,7 @@ img {
   margin: 0 auto 14px;
   background: var(--color-white);
   border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-rose-gold);
   border-radius: 6px;
   padding: 18px 24px;
 }
@@ -475,7 +546,7 @@ img {
 }
 
 .faq-list details[open] summary {
-  color: var(--color-accent-dark);
+  color: var(--color-lavender);
   margin-bottom: 10px;
 }
 
