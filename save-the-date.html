@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Save the Date | Tiryon &amp; Isobel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-title">Tis &amp; Is</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="our-story.html">Our Story</a></li>
+          <li><a href="details.html">Details</a></li>
+          <li><a href="travel.html">Travel</a></li>
+          <li><a href="carpool.html">Carpool</a></li>
+          <li><a href="registry.html">Registry</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="save-the-date.html" class="active">Save the Date</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section text-center" style="padding-bottom: 0;">
+    <div class="container">
+      <span class="eyebrow">Mark Your Calendar</span>
+      <h1>Save the Date</h1>
+      <hr class="divider">
+      <p style="max-width: 600px; margin: 0 auto 1em;">
+        We're getting married on <strong>Saturday, June 19, 2027</strong> at
+        Nant y Walch Barn, Llanwrtyd Wells, Wales &mdash; and we'd love for you
+        to be there! A formal invitation with all the details will follow
+        closer to the day, but for now we just wanted to get the date in your
+        diary.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0; padding-bottom:0;">
+    <div class="container" style="max-width: 640px;">
+      <p class="text-center">
+        This isn't a full RSVP just yet &mdash; we'll send a proper invitation
+        with all the details nearer the time. For now, we just need your
+        postal address so we can send you a physical save-the-date, and a
+        quick heads-up if you already know you won't be able to make it, so
+        we can get a rough idea of numbers.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!--
+        NETLIFY FORMS SETUP -- see rsvp.html for full notes on how this works.
+        action="/save-the-date-success.html" sends guests to a thank-you page after submitting.
+      -->
+      <form
+        name="save-the-date"
+        method="POST"
+        action="/save-the-date-success.html"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="rsvp-form"
+      >
+        <input type="hidden" name="form-name" value="save-the-date">
+        <p class="hidden-field">
+          <label>Don't fill this out if you're human: <input name="bot-field"></label>
+        </p>
+
+        <div class="form-group">
+          <label for="std_name">Full Name</label>
+          <input type="text" id="std_name" name="name" placeholder="Jane Doe" required>
+        </div>
+
+        <div class="form-group">
+          <label for="std_email">Email</label>
+          <input type="email" id="std_email" name="email" placeholder="jane@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="std_address1">Address Line 1</label>
+          <input type="text" id="std_address1" name="address_line_1" placeholder="Street address" required>
+        </div>
+
+        <div class="form-group">
+          <label for="std_address2">Address Line 2</label>
+          <input type="text" id="std_address2" name="address_line_2" placeholder="Apartment, suite, etc. (optional)">
+        </div>
+
+        <div class="form-group">
+          <label for="std_city">Town / City</label>
+          <input type="text" id="std_city" name="city" required>
+        </div>
+
+        <div class="form-group">
+          <label for="std_postcode">Postcode / Zip Code</label>
+          <input type="text" id="std_postcode" name="postcode" required>
+        </div>
+
+        <div class="form-group">
+          <label for="std_country">Country</label>
+          <input type="text" id="std_country" name="country" required>
+        </div>
+
+        <div class="form-group">
+          <label>Will you be able to join us?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="likely_attending" value="yes" required> Yes, count us in!</label>
+            <label><input type="radio" name="likely_attending" value="no"> Sadly, we won't be able to make it</label>
+            <label><input type="radio" name="likely_attending" value="unsure"> Not sure yet</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="std_message">Anything else you'd like to tell us?</label>
+          <textarea id="std_message" name="message" placeholder="Optional"></textarea>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Send</button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <span class="site-title">Tis &amp; Is</span>
+    <p>We can't wait to celebrate with you &mdash; June 19, 2027</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

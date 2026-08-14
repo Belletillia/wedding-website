@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carpool | Tiryon &amp; Isobel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-title">Tis &amp; Is</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="our-story.html">Our Story</a></li>
+          <li><a href="details.html">Details</a></li>
+          <li><a href="travel.html">Travel</a></li>
+          <li><a href="carpool.html" class="active">Carpool</a></li>
+          <li><a href="registry.html">Registry</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="save-the-date.html">Save the Date</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section text-center" style="padding-bottom: 0;">
+    <div class="container">
+      <span class="eyebrow">Share the Journey</span>
+      <h1>Carpool</h1>
+      <hr class="divider">
+      <p style="max-width: 640px; margin: 0 auto 1em;">
+        We get it, travelling from London to Wales without a car is tricky!
+        To help everyone get here, we'd like to help out as much as we can to
+        arrange carpools over to Llanwrtyd Wells.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0; padding-bottom:0;">
+    <div class="container" style="max-width: 720px;">
+      <p class="text-center">
+        It's likely to be far easier than the journey by public transport, and
+        sharing lifts helps spread the cost of petrol and car hire too. Plus
+        it's more eco friendly!
+      </p>
+      <p class="text-center">
+        If you're planning on driving down, and you'll have a couple of spare
+        seats in your car and you'd be happy to take some extra passengers,
+        please let us know! Equally, if you need a ride, then please fill in
+        the form below so that we can help match everyone up!
+      </p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+
+      <h2 class="text-center">Carpool Interest Check</h2>
+      <hr class="divider">
+
+      <!--
+        NETLIFY FORMS SETUP -- see rsvp.html for full notes on how this works.
+        action="/carpool-success.html" sends guests to a thank-you page after submitting.
+      -->
+      <form
+        name="carpool"
+        method="POST"
+        action="/carpool-success.html"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="rsvp-form"
+        id="carpool-form"
+      >
+        <input type="hidden" name="form-name" value="carpool">
+        <p class="hidden-field">
+          <label>Don't fill this out if you're human: <input name="bot-field"></label>
+        </p>
+
+        <div id="carpool-step-1">
+          <p class="form-note" style="margin-top: 0; margin-bottom: 1.5em;">Step 1 of 2</p>
+
+          <div class="form-group">
+            <label for="carpool_name">Full Name</label>
+            <input type="text" id="carpool_name" name="name" placeholder="Jane Doe" required>
+          </div>
+
+          <div class="form-group">
+            <label for="carpool_phone">Phone Number</label>
+            <div class="phone-row">
+              <input type="text" id="carpool_phone_code" name="phone_code" placeholder="+44" required>
+              <input type="tel" id="carpool_phone" name="phone" placeholder="7123 456789" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Which best describes you?</label>
+            <div class="radio-group">
+              <label><input type="radio" name="carpool_role" value="offering" required> I have spare seats</label>
+              <label><input type="radio" name="carpool_role" value="needing"> I need a ride</label>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button type="button" id="carpool-next" class="btn btn-primary">Next &rarr;</button>
+          </div>
+        </div>
+
+        <div id="carpool-step-2" style="display: none;">
+          <p class="form-note" style="margin-top: 0; margin-bottom: 1.5em;">Step 2 of 2</p>
+
+          <div class="form-group">
+            <label for="carpool_area">Where will you be travelling from?</label>
+            <input type="text" id="carpool_area" name="departure_area" placeholder="e.g. London, or a specific postcode">
+          </div>
+
+          <div id="offering-details" class="form-group">
+            <label for="spare_seats">How many spare seats do you have?</label>
+            <input type="number" id="spare_seats" name="spare_seats" min="1" max="6">
+          </div>
+
+          <div id="needing-details" class="form-group">
+            <label for="passengers">How many people need a ride?</label>
+            <input type="number" id="passengers" name="passengers" min="1" max="6">
+          </div>
+
+          <div class="form-group">
+            <label for="carpool_notes">Anything else that would help us match you up?</label>
+            <textarea id="carpool_notes" name="notes" placeholder="e.g. flexible timing, preferred pickup point"></textarea>
+          </div>
+
+          <div class="text-center">
+            <button type="button" id="carpool-back" class="btn" style="margin-right: 12px;">&larr; Back</button>
+            <button type="submit" class="btn btn-primary">Send</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <span class="site-title">Tis &amp; Is</span>
+    <p>We can't wait to celebrate with you &mdash; June 19, 2027</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
