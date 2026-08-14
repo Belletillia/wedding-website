@@ -1,17 +1,25 @@
 /* ============================================
    Wedding Website — Shared Styles
-   Palette: ivory / charcoal / dusty rose / gold
+   Palette: ivory / charcoal / sage / lilac / gold
    ============================================ */
 
 :root {
-  --color-bg: #faf7f2;
-  --color-bg-alt: #f2ece3;
-  --color-text: #3a3532;
-  --color-text-soft: #6b625b;
-  --color-accent: #b8918a;      /* dusty rose */
-  --color-accent-dark: #9c6f68;
-  --color-gold: #b08d57;
-  --color-border: #e3d9cc;
+  /* Neutrals — anchor everything, mostly unchanged */
+  --color-bg: #faf7f2;          /* ivory */
+  --color-bg-alt: #eef0ea;      /* whisper of sage */
+  --color-text: #3a3532;        /* charcoal */
+  --color-text-soft: #655f5a;
+
+  /* Accent = sage (your green) */
+  --color-accent: #7a8a6a;
+  --color-accent-dark: #55684a; /* headings, buttons, links */
+
+  /* Secondary = lilac (your purple) */
+  --color-lilac: #ad97af;       /* decorative only: dividers, tints, hover */
+  --color-lilac-dark: #7e6788;  /* readable version — text/eyebrows */
+
+  --color-gold: #b08d57;        /* keep — but sparingly */
+  --color-border: #dcd8ce;
   --color-white: #ffffff;
 
   --font-script: 'Parisienne', cursive;
@@ -79,7 +87,7 @@ img {
   text-transform: uppercase;
   letter-spacing: 0.25em;
   font-size: 0.75rem;
-  color: var(--color-gold);
+  color: var(--color-lilac-dark);
   margin-bottom: 0.75em;
   display: block;
 }
@@ -87,7 +95,7 @@ img {
 .divider {
   width: 60px;
   height: 2px;
-  background: var(--color-gold);
+  background: var(--color-lilac);
   margin: 1.5em auto;
   border: none;
 }
@@ -366,8 +374,8 @@ img {
   letter-spacing: 0.1em;
   font-size: 0.9rem;
   padding: 14px 36px;
-  border: 1px solid var(--color-accent-dark);
-  color: var(--color-accent-dark);
+  border: 1px solid var(--color-lilac-dark);
+  color: var(--color-lilac-dark);
   background: transparent;
   border-radius: 2px;
   cursor: pointer;
@@ -375,18 +383,20 @@ img {
 }
 
 .btn:hover {
-  background: var(--color-accent-dark);
+  background: var(--color-lilac);
   color: var(--color-white);
   text-decoration: none;
 }
 
 .btn-primary {
   background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
   color: var(--color-white);
 }
 
 .btn-primary:hover {
   background: var(--color-accent);
+  border-color: var(--color-accent);
   color: var(--color-white);
 }
 
@@ -410,7 +420,7 @@ img {
 
 .timeline-time {
   font-family: var(--font-heading);
-  color: var(--color-gold);
+  color: var(--color-lilac-dark);
   min-width: 100px;
   font-size: 1rem;
 }
