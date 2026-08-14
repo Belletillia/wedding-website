@@ -1,31 +1,18 @@
 /* ============================================
    Wedding Website — Shared Styles
-   Palette: ivory / charcoal / sage / lilac / gold
+   Palette: ivory / charcoal / dusty rose / gold
    ============================================ */
 
 :root {
-  /* Base & text */
-  --ivory:        #f6f2ea;  /* page background */
-  --charcoal:     #39352f;  /* body text, headings */
-  --charcoal-soft: #6e6a61;
-
-  /* Colour pops */
-  --sage:         #7a8a6a;  /* primary buttons, key accents, links */
-  --lilac:        #ad97af;  /* secondary buttons, subheadings */
-
-  /* Highlight — pick one */
-  --gold:         #c7ac78;  /* champagne gold (recommended) */
-  /* --gold:      #d8af9e;     rose gold — pinker alternative */
-  /* --gold:      #b29255;     antique gold — deeper alternative */
-
-  /* Supporting tints (optional) */
-  --sage-soft:    #edefe8;  /* pale sage section background */
-  --lilac-soft:   #f0ecf1;  /* pale lilac section background */
-  --ivory-warm:   #efe9de;  /* footer / alternating band */
-
-  /* Structural neutrals */
-  --white:        #ffffff;
-  --border:       #e2dbca;
+  --color-bg: #faf7f2;
+  --color-bg-alt: #f2ece3;
+  --color-text: #3a3532;
+  --color-text-soft: #6b625b;
+  --color-accent: #b8918a;      /* dusty rose */
+  --color-accent-dark: #9c6f68;
+  --color-gold: #b08d57;
+  --color-border: #e3d9cc;
+  --color-white: #ffffff;
 
   --font-script: 'Parisienne', cursive;
   --font-heading: 'Playfair Display', serif;
@@ -47,8 +34,8 @@ body {
   font-family: var(--font-body);
   font-size: 20px;
   line-height: 1.6;
-  color: var(--charcoal);
-  background: var(--ivory);
+  color: var(--color-text);
+  background: var(--color-bg);
 }
 
 h1, h2, h3, h4 {
@@ -56,7 +43,7 @@ h1, h2, h3, h4 {
   font-weight: 600;
   letter-spacing: 0.02em;
   margin: 0 0 0.5em;
-  color: var(--charcoal);
+  color: var(--color-text);
 }
 
 h1 { font-size: 2.6rem; }
@@ -68,7 +55,7 @@ p {
 }
 
 a {
-  color: var(--sage);
+  color: var(--color-accent-dark);
   text-decoration: none;
 }
 
@@ -92,15 +79,15 @@ img {
   text-transform: uppercase;
   letter-spacing: 0.25em;
   font-size: 0.75rem;
-  color: var(--sage);
+  color: var(--color-gold);
   margin-bottom: 0.75em;
   display: block;
 }
 
 .divider {
   width: 60px;
-  height: 1px;
-  background: var(--gold);
+  height: 2px;
+  background: var(--color-gold);
   margin: 1.5em auto;
   border: none;
 }
@@ -111,9 +98,9 @@ img {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(246, 242, 234, 0.95);
+  background: rgba(250, 247, 242, 0.95);
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .site-header .container {
@@ -127,7 +114,7 @@ img {
 .site-title {
   font-family: var(--font-script);
   font-size: 1.8rem;
-  color: var(--lilac);
+  color: var(--color-accent-dark);
 }
 
 .nav-toggle {
@@ -136,7 +123,7 @@ img {
   border: none;
   font-size: 1.6rem;
   cursor: pointer;
-  color: var(--charcoal);
+  color: var(--color-text);
 }
 
 .main-nav ul {
@@ -151,15 +138,15 @@ img {
   font-family: var(--font-heading);
   font-size: 0.95rem;
   letter-spacing: 0.05em;
-  color: var(--charcoal);
+  color: var(--color-text);
   text-transform: uppercase;
 }
 
 .main-nav a.active,
 .main-nav a:hover {
-  color: var(--sage);
+  color: var(--color-accent-dark);
   text-decoration: none;
-  border-bottom: 1px solid var(--sage);
+  border-bottom: 1px solid var(--color-accent-dark);
 }
 
 .main-nav .has-submenu {
@@ -174,8 +161,8 @@ img {
   top: 100%;
   left: 0;
   min-width: 160px;
-  background: var(--white);
-  border: 1px solid var(--border);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
   border-radius: 4px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   opacity: 0;
@@ -201,7 +188,7 @@ img {
 
 .main-nav .submenu a:hover,
 .main-nav .submenu a.active {
-  background: var(--sage-soft);
+  background: var(--color-bg-alt);
   border-bottom: none;
 }
 
@@ -230,7 +217,7 @@ img {
   }
 
   .main-nav li {
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--color-border);
   }
 
   .main-nav a {
@@ -260,20 +247,20 @@ img {
 .hero {
   text-align: center;
   padding: 90px 24px 70px;
-  background: linear-gradient(var(--ivory), var(--sage-soft));
+  background: linear-gradient(var(--color-bg), var(--color-bg-alt));
 }
 
 .hero .site-title-large {
   font-family: var(--font-script);
   font-size: 4.2rem;
-  color: var(--lilac);
+  color: var(--color-accent-dark);
   line-height: 1.2;
   margin-bottom: 0.2em;
 }
 
 .hero .ampersand {
   font-size: 2.2rem;
-  color: var(--gold);
+  color: var(--color-gold);
   display: block;
   margin: 0.1em 0;
 }
@@ -283,13 +270,13 @@ img {
   font-size: 1.3rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--charcoal-soft);
+  color: var(--color-text-soft);
   margin-top: 1em;
 }
 
 .hero .location {
   font-size: 1.1rem;
-  color: var(--charcoal-soft);
+  color: var(--color-text-soft);
 }
 
 /* ---------- Countdown ---------- */
@@ -309,7 +296,7 @@ img {
 .countdown .number {
   font-family: var(--font-heading);
   font-size: 2.4rem;
-  color: var(--sage);
+  color: var(--color-accent-dark);
   display: block;
 }
 
@@ -317,7 +304,7 @@ img {
   text-transform: uppercase;
   font-size: 0.75rem;
   letter-spacing: 0.15em;
-  color: var(--charcoal-soft);
+  color: var(--color-text-soft);
 }
 
 /* ---------- Sections ---------- */
@@ -327,7 +314,7 @@ img {
 }
 
 .section-alt {
-  background: var(--sage-soft);
+  background: var(--color-bg-alt);
 }
 
 .section-header {
@@ -343,21 +330,15 @@ img {
 }
 
 .card {
-  background: var(--lilac-soft);
-  border: 1px solid var(--border);
-  border-top: 3px solid var(--gold);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
   border-radius: 6px;
   padding: 32px 28px;
   text-align: center;
-  transition: background 0.2s ease;
-}
-
-.card:hover {
-  background: var(--sage-soft);
 }
 
 .card h3 {
-  color: var(--lilac);
+  color: var(--color-accent-dark);
 }
 
 .card-grid.compact {
@@ -385,26 +366,28 @@ img {
   letter-spacing: 0.1em;
   font-size: 0.9rem;
   padding: 14px 36px;
-  border: none;
-  background: var(--lilac);
-  color: var(--ivory);
+  border: 1px solid var(--color-accent-dark);
+  color: var(--color-accent-dark);
+  background: transparent;
   border-radius: 2px;
   cursor: pointer;
-  transition: filter 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .btn:hover {
-  filter: brightness(0.92);
+  background: var(--color-accent-dark);
+  color: var(--color-white);
   text-decoration: none;
 }
 
 .btn-primary {
-  background: var(--sage);
-  color: var(--ivory);
+  background: var(--color-accent-dark);
+  color: var(--color-white);
 }
 
 .btn-primary:hover {
-  filter: brightness(0.92);
+  background: var(--color-accent);
+  color: var(--color-white);
 }
 
 /* ---------- Timeline (Details page) ---------- */
@@ -418,7 +401,7 @@ img {
   display: flex;
   gap: 24px;
   padding: 18px 0;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .timeline-item:last-child {
@@ -427,7 +410,7 @@ img {
 
 .timeline-time {
   font-family: var(--font-heading);
-  color: var(--gold);
+  color: var(--color-gold);
   min-width: 100px;
   font-size: 1rem;
 }
@@ -437,9 +420,8 @@ img {
 .rsvp-form {
   max-width: 600px;
   margin: 0 auto;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-top: 3px solid var(--sage);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
   border-radius: 6px;
   padding: 40px;
 }
@@ -455,7 +437,7 @@ img {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 8px;
-  color: var(--charcoal-soft);
+  color: var(--color-text-soft);
 }
 
 .form-group input[type="text"],
@@ -468,10 +450,10 @@ img {
   padding: 12px 14px;
   font-family: var(--font-body);
   font-size: 1.05rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--color-border);
   border-radius: 4px;
-  background: var(--ivory);
-  color: var(--charcoal);
+  background: var(--color-bg);
+  color: var(--color-text);
 }
 
 .form-group textarea {
@@ -512,12 +494,11 @@ img {
 
 .radio-group input {
   width: auto;
-  accent-color: var(--gold);
 }
 
 .form-note {
   text-align: center;
-  color: var(--charcoal-soft);
+  color: var(--color-text-soft);
   font-size: 0.95rem;
   margin-top: 1em;
 }
@@ -539,9 +520,8 @@ img {
 .faq-list details {
   max-width: 720px;
   margin: 0 auto 14px;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--gold);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
   border-radius: 6px;
   padding: 18px 24px;
 }
@@ -550,11 +530,11 @@ img {
   font-family: var(--font-heading);
   cursor: pointer;
   font-size: 1.1rem;
-  color: var(--charcoal);
+  color: var(--color-text);
 }
 
 .faq-list details[open] summary {
-  color: var(--lilac);
+  color: var(--color-accent-dark);
   margin-bottom: 10px;
 }
 
@@ -563,10 +543,9 @@ img {
 .site-footer {
   text-align: center;
   padding: 40px 24px;
-  color: var(--charcoal-soft);
+  color: var(--color-text-soft);
   font-size: 0.95rem;
-  background: var(--ivory-warm);
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--color-border);
 }
 
 .site-footer .site-title {
