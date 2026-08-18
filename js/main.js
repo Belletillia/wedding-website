@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // ---- Countdown timer ----
   // Ceremony time is still TBD -- using midday as a placeholder.
   // UPDATE THIS once the time is confirmed (local time, ISO format).
-  var WEDDING_DATE = '2027-06-19T12:00:00';
+  var WEDDING_DATE = '2027-06-26T12:00:00';
 
   var countdownEl = document.getElementById('countdown');
   if (countdownEl) {
