@@ -144,4 +144,74 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   }
+
+  // ---- Save the Date gallery ----
+  var saveDateGallery = document.querySelector('[data-save-date-gallery]');
+
+  if (saveDateGallery) {
+    var gallerySlides = Array.from(saveDateGallery.querySelectorAll('[data-save-date-slide]'));
+    var galleryDots = Array.from(saveDateGallery.querySelectorAll('[data-gallery-dot]'));
+    var galleryPrevious = saveDateGallery.querySelector('[data-gallery-prev]');
+    var galleryNext = saveDateGallery.querySelector('[data-gallery-next]');
+    var galleryIndex = 0;
+    var galleryTimer = null;
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    var showGallerySlide = function (index) {
+      galleryIndex = (index + gallerySlides.length) % gallerySlides.length;
+
+      gallerySlides.forEach(function (slide, slideIndex) {
+        var isActive = slideIndex === galleryIndex;
+        slide.classList.toggle('is-active', isActive);
+        slide.setAttribute('aria-hidden', String(!isActive));
+      });
+
+      galleryDots.forEach(function (dot, dotIndex) {
+        var isActive = dotIndex === galleryIndex;
+        dot.classList.toggle('is-active', isActive);
+        if (isActive) {
+          dot.setAttribute('aria-current', 'true');
+        } else {
+          dot.removeAttribute('aria-current');
+        }
+      });
+    };
+
+    var stopGallery = function () {
+      if (galleryTimer) {
+        window.clearInterval(galleryTimer);
+        galleryTimer = null;
+      }
+    };
+
+    var startGallery = function () {
+      if (!reduceMotion && gallerySlides.length > 1 && !galleryTimer) {
+        galleryTimer = window.setInterval(function () {
+          showGallerySlide(galleryIndex + 1);
+        }, 6500);
+      }
+    };
+
+    if (galleryPrevious && galleryNext && gallerySlides.length) {
+      galleryPrevious.addEventListener('click', function () {
+        showGallerySlide(galleryIndex - 1);
+      });
+
+      galleryNext.addEventListener('click', function () {
+        showGallerySlide(galleryIndex + 1);
+      });
+
+      galleryDots.forEach(function (dot, dotIndex) {
+        dot.addEventListener('click', function () {
+          showGallerySlide(dotIndex);
+        });
+      });
+
+      saveDateGallery.addEventListener('mouseenter', stopGallery);
+      saveDateGallery.addEventListener('mouseleave', startGallery);
+      saveDateGallery.addEventListener('focusin', stopGallery);
+      saveDateGallery.addEventListener('focusout', startGallery);
+      startGallery();
+    }
+  }
 });
