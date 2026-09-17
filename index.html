@@ -14,12 +14,13 @@
   <header class="site-header">
     <div class="container">
       <a href="index.html" class="site-title">Tis &amp; Is</a>
-      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
-      <nav class="main-nav">
+      <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-navigation">
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+      </button>
+      <nav class="main-nav" id="site-navigation">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="our-story.html">Our Story</a></li>
-          <li><a href="details.html">Details</a></li>
           <li class="has-submenu">
             <a href="travel.html">Travel</a>
             <ul class="submenu">
@@ -43,7 +44,11 @@
         Isobel
       </h1>
       <p class="date">Saturday, June 26, 2027</p>
-      <p class="location">Nant y Walch Barn &middot; Llanwrtyd Wells, Wales</p>
+      <p class="location">
+        <a href="https://share.google/QnurDPIF2PPvrLOTd" target="_blank" rel="noopener">
+          Nant y Walch Barn, Abergwesyn Road, Llanwrtyd Wells, Powys LD5 4TN
+        </a>
+      </p>
 
       <div id="countdown" class="countdown"></div>
 
@@ -68,8 +73,8 @@
     <div class="container card-grid">
       <div class="card">
         <h3>Ceremony &amp; Reception</h3>
-        <p>Find the schedule, venue address, and dress code for the big day.</p>
-        <a href="details.html">View Details &rarr;</a>
+        <p>Find the dress code and answers to common questions about the day.</p>
+        <a href="faq.html">View FAQs &rarr;</a>
       </div>
       <div class="card">
         <h3>Travel &amp; Stay</h3>

@@ -1,7 +1,7 @@
 # Wedding Website
 
-A simple static wedding website with Home, Our Story, Details, Travel,
-Registry, FAQ, and RSVP pages. RSVP submissions are collected with
+A simple static wedding website with Home, Our Story, Travel, Registry,
+FAQ, Save the Date, and RSVP pages. RSVP submissions are collected with
 **Netlify Forms** — no backend or database needed.
 
 ## 1. Customize the content
@@ -10,15 +10,13 @@ Everything in `[square brackets]` is a placeholder. Search each `.html`
 file and replace:
 
 - **Names** — "Partner One" / "Partner Two" / "P & P" (site title, in every page's header/footer)
-- **Date** — "June 12, 2027" (appears on most pages)
-- **Venue** — name and address (`details.html`, `index.html`)
-- **Dress code, parking, schedule** — `details.html`
+- **Date** — "June 26, 2027" (appears on most pages)
+- **Venue** — name and location (`index.html`)
+- **Dress code and parking** — `faq.html`
 - **Hotels, airport, transportation** — `travel.html`
-- **Registry links** — `registry.html`
+- **Registry charity** — `registry.html`
 - **Our Story content** — `our-story.html`
 - **FAQ answers** — `faq.html`
-- **Contact email** — `couple@example.com` appears in `details.html`, `faq.html`, `rsvp-success.html`
-- **RSVP deadline** — `rsvp.html`
 
 ### Countdown timer
 
@@ -26,7 +24,7 @@ Open [js/main.js](js/main.js) and update this line near the top with your
 actual wedding date and time:
 
 ```js
-var WEDDING_DATE = '2027-06-12T15:00:00';
+var WEDDING_DATE = '2027-06-26T15:00:00';
 ```
 
 ### Photos
@@ -75,7 +73,6 @@ discarded by Netlify — you don't need to do anything extra.
 ```
 index.html          Home page with hero + countdown
 our-story.html       How you met / got engaged
-details.html         Ceremony & reception schedule, venue, dress code
 travel.html          Hotels, airport, getting around
 registry.html        Registry links
 faq.html              Frequently asked questions

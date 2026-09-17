@@ -9,14 +9,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (toggle && nav) {
     toggle.addEventListener('click', function () {
-      nav.classList.toggle('open');
+      var isOpen = nav.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      toggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
     });
   }
 
   // ---- Countdown timer ----
-  // Ceremony time is still TBD -- using midday as a placeholder.
-  // UPDATE THIS once the time is confirmed (local time, ISO format).
-  var WEDDING_DATE = '2027-06-26T12:00:00';
+  var WEDDING_DATE = '2027-06-26T15:00:00';
 
   var countdownEl = document.getElementById('countdown');
   if (countdownEl) {
