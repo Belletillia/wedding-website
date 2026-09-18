@@ -574,6 +574,161 @@ img {
   color: var(--color-white);
 }
 
+/* ---------- Registry gift card ---------- */
+
+.registry-container {
+  max-width: 720px;
+}
+
+.registry-intro {
+  max-width: 640px;
+  margin: 0 auto 2.25em;
+}
+
+.gift-card {
+  position: relative;
+  overflow: hidden;
+  padding: 54px 56px 48px;
+  text-align: center;
+  background:
+    radial-gradient(circle at top left, rgba(173, 151, 175, 0.16), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(122, 138, 106, 0.16), transparent 38%),
+    var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: 0 18px 50px rgba(58, 53, 50, 0.11);
+}
+
+.gift-card::before,
+.gift-card::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgba(176, 141, 87, 0.34);
+  border-radius: 50%;
+}
+
+.gift-card::before {
+  top: -62px;
+  left: -54px;
+}
+
+.gift-card::after {
+  right: -54px;
+  bottom: -62px;
+}
+
+.gift-card-flourish {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  color: var(--color-gold);
+}
+
+.gift-card-flourish span {
+  width: 54px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.65;
+}
+
+.gift-card-flourish svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.gift-card .eyebrow {
+  margin-bottom: 10px;
+}
+
+.gift-card h2 {
+  max-width: 520px;
+  margin: 0 auto 16px;
+  font-size: 2rem;
+}
+
+.gift-card > p:not(.gift-card-note) {
+  max-width: 520px;
+  margin: 0 auto 28px;
+  color: var(--color-text-soft);
+}
+
+.gift-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-width: 240px;
+  padding: 15px 26px;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--color-accent-dark);
+  border: 1px solid var(--color-accent-dark);
+  border-radius: 3px;
+  box-shadow: 0 7px 18px rgba(85, 104, 74, 0.18);
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.gift-button svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+}
+
+.gift-button:hover,
+.gift-button:focus-visible {
+  color: var(--color-white);
+  text-decoration: none;
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  box-shadow: 0 10px 24px rgba(85, 104, 74, 0.22);
+  transform: translateY(-2px);
+}
+
+.gift-button:focus-visible {
+  outline: 3px solid rgba(126, 103, 136, 0.3);
+  outline-offset: 4px;
+}
+
+.gift-card-note {
+  margin: 16px 0 0;
+  color: var(--color-text-soft);
+  font-size: 0.82rem;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .gift-card {
+    padding: 42px 22px 38px;
+  }
+
+  .gift-card h2 {
+    font-size: 1.65rem;
+  }
+
+  .gift-button {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gift-button {
+    transition: none;
+  }
+}
+
 /* ---------- Forms (RSVP) ---------- */
 
 .rsvp-form {
