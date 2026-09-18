@@ -14,7 +14,6 @@ file and replace:
 - **Venue** — name and location (`index.html`)
 - **Dress code and parking** — `faq.html`
 - **Hotels, airport, transportation** — `travel.html`
-- **Registry charity** — `registry.html`
 - **Our Story content** — `our-story.html`
 - **FAQ answers** — `faq.html`
 
