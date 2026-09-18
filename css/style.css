@@ -807,6 +807,10 @@ img {
   margin: 0 auto 30px;
 }
 
+.save-date-form-intro .eyebrow {
+  color: var(--color-text);
+}
+
 .save-date-form-section .rsvp-form {
   box-shadow: 0 14px 34px rgba(58, 53, 50, 0.08);
 }
